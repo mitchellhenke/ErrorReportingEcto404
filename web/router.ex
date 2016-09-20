@@ -1,5 +1,6 @@
 defmodule ErrorReportingEcto404.Router do
   use ErrorReportingEcto404.Web, :router
+  # comment the following line to have tests pass
   use Plug.ErrorHandler
 
   pipeline :browser do
