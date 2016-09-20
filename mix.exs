@@ -37,7 +37,6 @@ defmodule ErrorReportingEcto404.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
-     {:sentry, "~> 1.0"},
      {:cowboy, "~> 1.0"}]
   end
 

@@ -9,9 +9,6 @@ config :error_reporting_ecto_404, ErrorReportingEcto404.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
-config :sentry,
-  environment_name: "test"
-
 # Configure your database
 config :error_reporting_ecto_404, ErrorReportingEcto404.Repo,
   adapter: Ecto.Adapters.Postgres,

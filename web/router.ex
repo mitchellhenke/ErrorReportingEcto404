@@ -1,7 +1,6 @@
 defmodule ErrorReportingEcto404.Router do
   use ErrorReportingEcto404.Web, :router
   use Plug.ErrorHandler
-  use Sentry.Plug
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -16,9 +15,13 @@ defmodule ErrorReportingEcto404.Router do
   end
 
   scope "/", ErrorReportingEcto404 do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :api # Use the default browser stack
 
     get "/:id", PageController, :show
+  end
+
+  defp handle_errors(_conn, _) do
+    # report or something
   end
 
   # Other scopes may use custom stacks.
