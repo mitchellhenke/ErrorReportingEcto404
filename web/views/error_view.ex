@@ -1,6 +1,11 @@
 defmodule ErrorReportingEcto404.ErrorView do
   use ErrorReportingEcto404.Web, :view
 
+  # Uncomment me for passing test
+  # def render("501.html", _assigns) do
+  #   "Not Implemented"
+  # end
+
   def render("501.json", _assigns) do
     %{
       id: "NOT IMPLEMENTED",
