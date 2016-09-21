@@ -21,6 +21,7 @@ defmodule ErrorReportingEcto404.Router do
     get "/:id", PageController, :show
   end
 
+  # comment the following method to have tests pass
   defp handle_errors(_conn, _) do
     # report or something
   end
