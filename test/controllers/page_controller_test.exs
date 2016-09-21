@@ -3,9 +3,9 @@ defmodule ErrorReportingEcto404.PageControllerTest do
 
   test "GET /", %{conn: conn} do
     assert_error_sent 501, fn ->
-      conn # uncomment me and test will pass |> put_req_header("accept", "application/json")
+      conn
+      |> put_req_header("accept", "application/json")
       |> get("/0")
-
     end
   end
 end
