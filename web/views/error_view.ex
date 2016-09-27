@@ -24,6 +24,7 @@ defmodule ErrorReportingEcto404.ErrorView do
   # In case no render clause matches or no
   # template is found, let's render it as 500
   def template_not_found(template, assigns) do
+    IO.inspect assigns.conn.private[:phoenix_format]
     render "500.json-api", assigns
   end
 end

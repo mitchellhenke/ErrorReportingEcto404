@@ -7,7 +7,6 @@ defmodule ErrorReportingEcto404.PageControllerTest do
       |> put_req_header("accept", "application/vnd.api+json")
       |> put_req_header("content-type", "application/vnd.api+json")
       |> get("/0")
-
     end
   end
 end

@@ -3,6 +3,7 @@ defmodule ErrorReportingEcto404.PageController do
   alias ErrorReportingEcto404.Thing
 
   def show(conn, %{"id" => id}) do
+    IO.inspect conn.private[:phoenix_format]
     raise MyError, "this is an error"
     render conn, "index.html"
   end
