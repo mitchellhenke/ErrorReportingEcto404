@@ -1,7 +1,5 @@
 defmodule ErrorReportingEcto404.Router do
   use ErrorReportingEcto404.Web, :router
-  # comment the following line to have tests pass
-  use Plug.ErrorHandler
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -12,18 +10,13 @@ defmodule ErrorReportingEcto404.Router do
   end
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug :accepts, ["json-api"]
   end
 
   scope "/", ErrorReportingEcto404 do
     pipe_through :api # Use the default browser stack
 
     get "/:id", PageController, :show
-  end
-
-  # comment the following method to have tests pass
-  defp handle_errors(_conn, _) do
-    # report or something
   end
 
   # Other scopes may use custom stacks.
