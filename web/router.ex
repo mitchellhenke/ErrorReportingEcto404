@@ -16,6 +16,7 @@ defmodule ErrorReportingEcto404.Router do
   scope "/", ErrorReportingEcto404 do
     pipe_through :api # Use the default browser stack
 
+    get "/test", PageController, :index
     get "/:id", PageController, :show
   end
 

@@ -5,7 +5,12 @@ defmodule ErrorReportingEcto404.PageController do
   def show(conn, %{"id" => id}) do
     IO.inspect conn.private[:phoenix_format]
     raise MyError, "this is an error"
-    render conn, "index.html"
+    render conn, "index.json-api"
+  end
+
+  def index(conn, _) do
+    IO.inspect conn.private[:phoenix_format]
+    render conn, "index.json-api"
   end
 end
 
